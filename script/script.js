@@ -9,6 +9,7 @@ class SpeedTyping{
         this.result=null;
         this.timeleft=null;
         this.message=null;
+        this.start=null;
         this.interval=0;
         this.score=0;
         this.time=0;
@@ -20,7 +21,6 @@ class SpeedTyping{
         this.initialize();
         this.addEventListeners();
         this.countdown();
-
     }
     initialize(){
         this.input=document.querySelector('[data-input]');
@@ -29,6 +29,7 @@ class SpeedTyping{
         this.timeleft=document.querySelector('[data-timeleft]')
         this.result=document.querySelector('[data-resultscore]');
         this.message=document.querySelector('[data-message]');
+        this.start=document.querySelector('[data-start]');
         this.input.removeAttribute('disabled');
         this.time=this.levels.easy;
         this.clear();
@@ -44,6 +45,7 @@ class SpeedTyping{
     clear(){
         this.input.value="";
         this.message.innerHTML="";
+        this.start.style.display="none";
     }
     getRandomWord(){
         fetch("https://random-word-api.herokuapp.com/word?number=1")
@@ -62,9 +64,11 @@ class SpeedTyping{
             this.time--;
             this.timeleft.innerHTML=this.time
             this.secondsRemain.innerHTML=this.time;
+            console.log(this.interval)
             if(this.time<=0){
                 this.message.innerHTML=`Koniec gry! Twój wynik:${this.score}`
                 this.input.setAttribute('disabled','true');
+                this.start.style.display="block";
                 clearInterval(this.interval);
             }
         },1000)
@@ -73,7 +77,7 @@ class SpeedTyping{
         this.word.innerHTML=this.randomWord;
     }
     checkWord(){
-        if(this.input.value===this.randomWord){
+        if((this.input.value).toLowerCase()===this.randomWord){
             this.score++;
             this.initialize();
         }
