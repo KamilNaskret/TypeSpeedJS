@@ -1,0 +1,9 @@
+.header{
+    height:100px;
+    background-color:map-get($colors,main);
+    display:flex;
+    @include flex(row,center,center);
+    &__title{
+        font-size:$fontSize*2;
+    }
+}

@@ -1,0 +1,22 @@
+$fontSize:18px;
+
+$colors:(
+    "main":gray,
+    "second":darkslategray,
+    "font":white
+);
+
+*{
+    margin:0;
+    padding:0;
+    font-size:$fontSize;
+    box-sizing:border-box;
+    font-family: 'Yusei Magic', sans-serif;
+    color:map-get($colors,font);
+}
+
+@mixin flex($direction,$align,$justify){
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}

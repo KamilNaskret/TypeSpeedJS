@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'header';
+@import 'mains';
+
+@media (max-width:700px){
+    .main{
+        &__title{
+            font-size:14px;
+        }
+        &__word{
+            font-size:25px;
+        }
+        .form__input{
+            width:90%;
+        }
+        &__result{
+            width:90%;
+        }
+        &__btn{
+            left:22%;
+        }
+    }
+}

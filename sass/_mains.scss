@@ -1,0 +1,35 @@
+.main{
+    height:calc(100vh - 100px);
+    position:relative;
+    background-color: map-get($colors,second);
+    display:flex;
+    @include flex(column,center,space-around);
+    &__result{
+        display:flex;
+        @include flex(row,center,space-around);
+        width:50%;
+        *{
+            font-size:$fontSize+8px;
+        }
+    }
+    .form__input{
+        padding:15px 45px;
+        color:black;
+        border-radius:20px;
+        outline:none;
+        border:none;
+    }
+    &__word{
+        font-size:$fontSize*3;
+    }
+    &__btn{
+        position:relative;
+        top:10%;
+        left:7%;
+        padding:10px 30px;
+        border:2px solid black;
+        transform:translate(-50%,-50%);
+        background-color:map-get($colors,main);
+        cursor:pointer;
+    }
+}

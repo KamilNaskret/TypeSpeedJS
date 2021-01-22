@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Speed</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet"> 
+    <script defer src="script/script.js"></script>
+    <link rel="stylesheet" href="./dist/css/main.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">
+            Speed Typing Game
+        </h1>
+    </header>
+    <main class="main">
+        <button class="main__btn" data-start>Start game!</button>
+        <h2 class="main__title">
+            Type the given word below within <span data-seconds></span> seconds
+        </h2>
+        <p class="main__word" data-api>
+        </p>
+            <input type="text" placeholder="Start typing..." class="form__input" data-input disabled>
+        <h3 class="main__message" data-message></h3>
+        <div class="main__result">
+            <p class="main__result-time">
+                Time left:<span data-timeleft></span>
+            </p>
+            <p class="main__result-score">
+                Score:<span data-resultscore></span>
+            </p>
+        </div>
+    </main>
+</body>
+</html>
